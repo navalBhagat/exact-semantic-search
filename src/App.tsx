@@ -1,6 +1,11 @@
-import React from "react";
+import { SearchEngine } from "./app/SearchEngine";
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="app">
+      <SearchEngine />
+    </div>
+  );
 }
 
 export default App;
