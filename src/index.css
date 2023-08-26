@@ -6,6 +6,16 @@ html {
   font-family: 'Quicksand', sans-serif;
 }
 
+.title { 
+  margin-left: 36%;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.exact { 
+  color: #e1141d;
+}
+
 .search-engine {
   display: flex;
   flex-direction: column;
