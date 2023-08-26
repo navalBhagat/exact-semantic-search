@@ -1,2 +1,2 @@
+export * from './Search';
 export * from './Results';
-export * from './SearchBox';
