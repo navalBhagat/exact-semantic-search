@@ -35,25 +35,27 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ setData, setStatus }) => {
   return (
     <div className="search-box">
       <div className="spacer" />
-      <input
-        className="search-input"
-        placeholder="Ask me a question"
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") handleChange(input);
-        }}
-      />
-      <img
-        className="search-icon"
-        src="/right-chevron.png"
-        alt="search icon"
-        onClick={(e) => {
-          handleChange(input);
-        }}
-      />
+      <div className="shadow-container box">
+        <input
+          className="search-input"
+          placeholder="Ask me a question"
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleChange(input);
+          }}
+        />
+        <img
+          className="search-icon"
+          src="/right-chevron.png"
+          alt="search icon"
+          onClick={(e) => {
+            handleChange(input);
+          }}
+        />
+      </div>
     </div>
   );
 };

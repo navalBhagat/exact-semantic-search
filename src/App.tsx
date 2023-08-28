@@ -3,7 +3,7 @@ import { Title } from "./app/Title";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app dotted-background">
       <Title />
       <SearchEngine />
     </div>

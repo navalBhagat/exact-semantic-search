@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
 
 
 html {
@@ -6,10 +7,85 @@ html {
   font-family: 'Quicksand', sans-serif;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+}
+
+.shadow-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.box:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  right: -35px;
+  bottom: 0;
+  left: 0px;
+  background: linear-gradient(-45deg, #60efff 0%, #00ff87 100% );
+  transform: translate3d(0px, 0px, 0) scale(0.95);
+  filter: blur(30px);
+  opacity: 1.4;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+
+.dotted-background {
+  background-image:radial-gradient(#181818 5%,#0000001f 15%);
+  background-color:#000;
+  position:fixed!important;
+  z-index: -100;
+  overflow: auto;
+}
+.dotted-background,
+.result-background {
+  background-position: 0 0,0px 0px;
+  background-size:16px 16px;
+  width:100%;
+  height: 100%;
+  z-index: -100;
+
+}
+.result-background {
+  background-image:radial-gradient(#f6f6f6 15%,transparent 0);
+  background-color:#fff;
+  position:absolute!important;
+  z-index: -100;
+}
+
 .title { 
-  margin-left: 36%;
   font-size: xx-large;
   font-weight: bold;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  align-self: center;
 }
 
 .exact { 
@@ -43,7 +119,7 @@ html {
 }
 
 .search-input {
-  width: 50%;
+  width: 30rem;
   height: 2.5rem;
   border: none;
   border-radius: 5rem;
@@ -51,6 +127,8 @@ html {
   outline: none;
   padding-left: 1rem;
   font-size: medium;
+  background: #18181b;
+  color: white;
 }
 
 .search-input::placeholder {
@@ -67,7 +145,7 @@ html {
 }
 
 .result-documents {
-  background-color: white;
+  background-color: #0e0e0e;
   width: 49%;
   margin-left: 26%;
   margin-right: 26%;
@@ -77,11 +155,12 @@ html {
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
+  color: white
 }
 
 .result-document {
   width: 95%;
-  background-color: white;
+  background-color: #0e0e0e;
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
@@ -90,10 +169,16 @@ html {
 
 .result-document:hover { 
   background-color: #e1e1e1;
+  color: black;
 }
 
 .result-document:hover .pill {
-  background-color: white;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.result-AI-answer-end {
+  margin-top: 20px;
 }
 
 .result-title {
@@ -123,18 +208,28 @@ html {
   padding-left: 10px;
   padding-right: 10px;
   font-weight: 300;
+  color: black;
 }
 
+.result-AI.box {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  color: white;
+}
 .result-AI {
   width: 45%;
   margin-left: 26%;
   margin-right: 26%;
   padding: 2rem;
+  position: relative;
+  background: #0e0e0e;
+  border-radius: 20px;
 }
 
 .result-AI-answer-label {
   font-size: large;
   color: gray;
+  margin-bottom: 20px;
 }
 
 .result-AI-answer {
